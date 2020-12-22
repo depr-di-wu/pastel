@@ -1,5 +1,5 @@
 # Pastel
-A fully custom Emacs configuration.
+A fully custom Emacs configuration.x
 
 ## How to run?
 ```shell
