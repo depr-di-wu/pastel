@@ -3,6 +3,14 @@
 - *C-x C-s* | save file
 - *C-x C-f* | find file (open file)
 
+## Buffers
+
+- *C-x k* | kill buffer
+
+## Interactive Commands
+
+- *M-x {command}* | execute command
+
 ## Cut/Paste
 
 - *C-w* | cut
