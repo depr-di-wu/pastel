@@ -31,3 +31,24 @@
 
 ;; Cancel prompt with ESC
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; Modes
+
+;; Golang
+(use-package go-mode
+  :ensure t
+  :bind (
+	 :map go-mode-map
+	      ("C-c C-f . gofmt"))
+  :config (add-hook 'before-save-hook 'gofmt-before-save))
+
+;; Markdown
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode) ; GitHub flavored Markdown files.
+         ("\\.md\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
+;; Prolog
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
