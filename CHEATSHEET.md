@@ -18,6 +18,7 @@
 
 ## Help
 
+- *C-x 1* | close help window
 - *C-h v* | describe a variable
 
 ## Recommendations

@@ -26,11 +26,33 @@
 
 ;; Ivy (completion)
 ;; Manual: https://oremacs.com/swiper
-(use-package ivy)
-(ivy-mode 1)
+(use-package counsel
+  :config
+  (ivy-mode 1)
+  (counsel-mode 1))
+(use-package ivy-rich
+  :config
+  (ivy-rich-mode 1))
 
 ;; Cancel prompt with ESC
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; Line Numbers
+(global-display-line-numbers-mode t)
+(column-number-mode)
+;; Disable line numbers in the following modes.
+(dolist (mode '(org-mode-hook
+		term-mode-hook
+		shell-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+;; Which Key
+(use-package which-key
+  :config
+  (which-key-mode))
 
 ;; Modes
 
